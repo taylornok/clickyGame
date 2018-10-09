@@ -1,1 +1,1 @@
-export CardContainer from "./CardContainer"
+export {default} from "./CardContainer"

@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.css";
 import "../../../src/CardData.json"
 
-
+// onClick = {() => props.handleClick(props.value)}
 const Card = props => (
     <div className="card">
         <div className="img-container">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDom from "react-dom";
 import './App.css';
 import Card from "./components/Card";
 import CardContainer from "./components/CardContainer";
@@ -14,7 +15,16 @@ class App extends Component {
     CardData
   }
 
+  // handleClick = event => {
 
+  //   const min = 1;
+  //   const max = 12;
+  //   // const random = Math.floor(Math.random() * max + min);
+  //   this.setState = ({value :this.props.random()})
+  //   // console.log(this.state.value)
+  //   console.log (event)
+
+  // }
 
 
   
@@ -30,13 +40,15 @@ class App extends Component {
             <CardContainer>
               { 
                 CardData.map((item, index) => {
+                  console.log (item.value)
                   return (
                     <Card 
                       image = {item.image}
                       name = {item.name}
+                      value = {item.value}
+                      
                     />
                   )
-                  console.log (item)
               })}
             </CardContainer>
           </Wrapper>

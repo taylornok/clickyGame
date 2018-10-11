@@ -26,6 +26,12 @@ class App extends Component {
 
   // }
 
+  Random = (Card) => {
+    this.CardData.value = Math.floor(Math.random() * 12 +1 )
+    console.log(this.Random)
+    alert( `{Random}` + 'this has been clicked')
+  }
+
 
   
   render() {
@@ -42,7 +48,7 @@ class App extends Component {
                 CardData.map((item, index) => {
                   console.log (item.value)
                   return (
-                    <Card 
+                    <Card onClick = {this.Random()}
                       image = {item.image}
                       name = {item.name}
                       value = {item.value}

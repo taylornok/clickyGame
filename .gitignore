@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+#troubleshooting and additional resources
+/errors-screenshots
+
 # testing
 /coverage
 

@@ -1,9 +1,11 @@
 import React from "react";
 import "./CardContainer.css";
 
+
+
 const CardContainer = props => (
     <div className = "CardContainer">
-       CardContainer
+       {props.children}
     </div>
 )
 

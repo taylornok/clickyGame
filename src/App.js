@@ -1,33 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Card from "./components/Card";
 import CardContainer from "./components/CardContainer";
 import ScoreBar from "./components/ScoreBar";
 import Title  from "./components/Title";
-import CardData from "./CardData.json"
+import CardData from "./CardData.json";
+import Wrapper from "./components/Wrapper";
+
 
 class App extends Component {
 
   state = {
     CardData
   }
-  
+
+
+
 
   
   render() {
     return (
-      <Title>Card Swap!</Title>
-      {this.state.CardData.map(CardData => (
-        <Card
-          selectFriend = {this.selectFriend}
-          id ={CardData.id}
-          name ={CardData.name}
-          image = {CardData.image}
-          occupation  = {friend.occupation}
-        />
-      ))}
-    );
+      <div>
+        {/* <div>
+          <Title>My Title</Title>
+        </div> */}
+        <div>
+          <Wrapper>
+              <Title>Friend Click!</Title>
+            <CardContainer>
+              { 
+                CardData.map((item, index) => {
+                  return (
+                    <Card 
+                      image = {item.image}
+                      name = {item.name}
+                    />
+                  )
+                  console.log (item)
+              })}
+            </CardContainer>
+          </Wrapper>
+        </div>
+      </div>
+
+    )    
   }
 }
 

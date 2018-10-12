@@ -10,24 +10,29 @@ import Wrapper from "./components/Wrapper";
 
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      total : 0,
+      isClicked : false,
 
-  state = {
-    CardData
+  
+    }
+
+    this.randomize = this.randomize.bind(this)
   }
+ 
 
-  // handleClick = event => {
 
-  //   const min = 1;
-  //   const max = 12;
-  //   // const random = Math.floor(Math.random() * max + min);
-  //   this.setState = ({value :this.props.random()})
-  //   // console.log(this.state.value)
-  //   console.log (event)
-
-  // }
-
+/*
+You could have your handleClick func back in App.js, BUT-- you could pass
+it as a prop to Card.js, where internally it calls that function (which is a prop)
+on it's own handleClick
+*/
   randomize = id => {
     let randId = Math.floor(Math.random(id) * 12 + 1);
+    this.setState({total: this.state.total + id});
+
     console.log(randId)
     
   };
@@ -39,19 +44,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <div>
-          <Title>My Title</Title>
-        </div> */}
         <div>
           <Wrapper>
               <Title>Friend Click!</Title>
             <CardContainer>
               { 
                 CardData.map((item, index) => {
-                  // console.log (item.id)
                   return (
                     <Card 
-                      handleClick = {this.randomize (item.id)}
+                      handleClick = {this.randomize}
+                      id = {item.id}
                       image = {item.image}
                       name = {item.name}
                       
